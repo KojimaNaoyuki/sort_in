@@ -36,12 +36,12 @@ GEM
     method_source (1.0.0)
     minitest (5.20.0)
     mutex_m (0.1.2)
+    mysql2 (0.5.5)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    rake (13.1.0)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
@@ -62,10 +62,11 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
+  mysql2
   pry-rails
-  rake (~> 13.0)
   rspec
   sort_in!
 

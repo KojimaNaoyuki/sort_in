@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activerecord'
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "pry-rails"
+  spec.add_development_dependency 'mysql2'
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"

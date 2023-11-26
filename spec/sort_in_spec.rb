@@ -4,4 +4,10 @@ describe SortIn::Sort do
   end
 
   class Post < ApplicationRecord; end
-end
+
+  describe '.sort_in' do
+    it 'test' do
+      expect(1 + 1).to eq 2
+    end
+  end
+endbundle exec rspec

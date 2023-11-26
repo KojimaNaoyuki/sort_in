@@ -4,7 +4,7 @@ module SortIn
 
     module ClassMethods
       def sort_in
-        
+        print('aaa')
       end
     end
   end
