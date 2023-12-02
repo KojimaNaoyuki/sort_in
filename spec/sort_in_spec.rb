@@ -1,4 +1,6 @@
-describe SortIn::Sort do
+require './spec_helper'
+
+RSpec.describe SortIn do
   class ApplicationRecord < ActiveRecord::Base
     self.abstract_class = true
   end
@@ -10,4 +12,4 @@ describe SortIn::Sort do
       expect(1 + 1).to eq 2
     end
   end
-endbundle exec rspec
+end

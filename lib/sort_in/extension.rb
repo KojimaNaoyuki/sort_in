@@ -1,3 +1,5 @@
+require 'sort_in/model_extension'
+
 module SortIn
   module Extension
     extend ActiveSupport::Concern
