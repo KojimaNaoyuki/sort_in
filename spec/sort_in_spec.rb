@@ -7,13 +7,27 @@ RSpec.describe SortIn do
 
   class Post < ApplicationRecord; end
 
-  describe '.sort_in' do
-    let!(:post_first) { Post.create(title: 'first post', content: 'test') }
-    let!(:post_second) { Post.create(title: 'second post', content: 'hogehoge') }
-    let!(:post_third) { Post.create(title: 'third post', content: 'hogehoge') }
+  describe '.where_sort_in' do
+    let!(:post_first) { Post.create(id: 1, title: 'first post', content: 'first') }
+    let!(:post_second) { Post.create(id: 2, title: 'second post', content: 'second') }
+    let!(:post_third) { Post.create(id: 3, title: 'third post', content: 'third') }
 
-    it 'test' do
-      expect(Post.where(id: [3, 1, 2]).sort_in).to eq 'aaa'
+    context 'when sort key is not specified' do
+      it 'get in order of id' do
+        sorted_post = Post.where_sort_in(id: [3, 1, 2])
+        expect(sorted_post[0].id).to eq post_third.id
+        expect(sorted_post[1].id).to eq post_first.id
+        expect(sorted_post[2].id).to eq post_second.id
+      end
+    end
+
+    context 'when sort key is specified' do
+      it 'get in order of specified key' do
+        sorted_post = Post.where_sort_in(sort_key: :content, content: ['third', 'second', 'first'])
+        expect(sorted_post[0].id).to eq post_third.id
+        expect(sorted_post[1].id).to eq post_second.id
+        expect(sorted_post[2].id).to eq post_first.id
+      end
     end
   end
 end
