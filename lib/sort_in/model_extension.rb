@@ -1,5 +1,3 @@
-require'pry'
-
 module SortIn
   module ModelExtension
     extend ActiveSupport::Concern
