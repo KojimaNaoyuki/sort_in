@@ -1,4 +1,6 @@
-example_id                 | status | run_time              |
--------------------------- | ------ | --------------------- |
-./sort_in_spec.rb[1:1:1:1] | passed | 0.00609 seconds       |
-./sort_in_spec.rb[1:1:2:1] | passed | 1 minute 21.3 seconds |
+example_id                   | status | run_time        |
+---------------------------- | ------ | --------------- |
+./sort_in_spec.rb[1:1:1:1]   | passed | 0.04092 seconds |
+./sort_in_spec.rb[1:1:1:2:1] | passed | 0.00668 seconds |
+./sort_in_spec.rb[1:1:2:1]   | passed | 0.00778 seconds |
+./sort_in_spec.rb[1:1:2:2:1] | passed | 0.00842 seconds |

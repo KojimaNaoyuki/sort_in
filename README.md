@@ -1,24 +1,47 @@
 # SortIn
 
-TODO: Delete this and the text below, and describe your gem
+This gem provides a method that allows you to sort and retrieve values in the order they were passed to the IN clause when the IN clause is issued from the where method of ActiveRecord.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sort_in`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Language
+
+- [Japanese]()
+- [English]()
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add sort_in to your project's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```
+gem 'sort_in'
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Then, execute the installation:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+```
+$ bundle
+```
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+You can also install sort_in standalone:
+
+```
+$ gem install sort_in
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+You can use it in a natural flow by using ActiveRecord methods and method chaining. In the example below, the filtering conditions of the where clause specify id: 3, 2, 1. In a regular where clause, an IN clause is issued, and the results are returned in ascending order of id, filtered by 3, 2, 1. By using the where_sort_in provided by this gem, you can not only filter by id 3, 2, 1 but also retrieve records in the order specified by the IN clause.
+
+```
+Post.where_sort_in(id: [3, 2, 1])
+=> [#<Post:~~~ id: 3, ~~~>, #<Post:~~~ id: 2, ~~~>, #<Post:~~~ id: 1, ~~~>]
+```
+
+If you want to sort by a column other than id, use the keyword argument sort_key. You can specify the column to be used for sorting.
+
+```
+Post.where_sort_in(sort_key: :content, content: ['third', 'second', 'first'])
+=> [#<Post:~~~ id: 3, content: 'third', ~~~>, #<Post:~~~ id: 2, content: 'second', ~~~>, #<Post:~~~ id: 1, content: 'first', ~~~>]
+```
 
 ## Development
 

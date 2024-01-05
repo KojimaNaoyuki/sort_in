@@ -25,7 +25,7 @@ module SortIn
           targets.find { |sort_target| sort_target[sort_key] == value }
         end
 
-        return sorted_targets.compact
+        sorted_targets.compact
       end
     end
   end
