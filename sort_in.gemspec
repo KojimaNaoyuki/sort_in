@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Gem to be sorted in the order specified in the in clause"
   spec.homepage = "https://github.com/KojimaNaoyuki/sort_in"
   spec.required_ruby_version = ">= 2.6.0"
+  spec.license = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
   # spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
