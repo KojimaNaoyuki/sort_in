@@ -10,12 +10,5 @@ module SortIn
         kls.public_send(:include, SortIn::ModelExtension) if kls.superclass == ActiveRecord::Base
       end
     end
-
-    included do
-      descendants.each do |kls|
-        kls.public_send(:include, SortIn::ModelExtension) if kls.superclass == ApplicationRecord
-      end
-    end
-
   end
 end

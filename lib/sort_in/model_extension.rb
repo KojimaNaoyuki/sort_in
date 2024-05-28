@@ -4,7 +4,7 @@ module SortIn
 
     module ClassMethods
       def where_sort_in(sort_key: nil, **args)
-        targets = where(args)
+        targets = self.where(args)
         sort_in(targets: targets, args: args, sort_key: sort_key)
       end
 
